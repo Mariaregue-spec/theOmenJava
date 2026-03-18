@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.confing.DBManager;
 import org.example.controller.MovieController;
-import org.example.model.Movie;
 import org.example.repository.MovieRepositoryImpl;
 import org.example.view.MovieView;
 

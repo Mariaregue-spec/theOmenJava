@@ -2,7 +2,7 @@ package org.example.repository;
 
 
 
-import org.example.confing.DBManager;
+import org.example.config.DBManager;
 import org.example.model.Movie;
 
 import java.sql.Connection;
