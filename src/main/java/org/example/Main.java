@@ -27,6 +27,8 @@ public class Main {
         //movieController.createMovieController(movie2);
         MovieView movieView = new MovieView(movieController);
         movieView.CreateMovieView();
+        //eventView.CreateEventView();
+        movieView.showMovies();
     }
 
 }

@@ -4,6 +4,7 @@ import org.example.controller.MovieController;
 import org.example.model.Movie;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class MovieView {
@@ -44,4 +45,11 @@ public class MovieView {
         return movie;
     }
 
+    public void showMovies(){
+        List<Movie> movieList = movieController.findAllController();
+
+        for (Movie movie : movieList){
+            System.out.println("Titulo : " +  movie.getTitulo() + "| Anio : " + movie.getAnio() + "| Rating : " + movie.getRating() + "| Poster : " + movie.getPoster() + "| Sinopsis" + movie.getSinopsis());
+        }
+    }
 }

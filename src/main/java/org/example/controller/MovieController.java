@@ -6,6 +6,7 @@ import org.example.repository.MovieRepositoryImpl;
 import org.example.repository.MovieRepositoryImpl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class MovieController {
 
@@ -19,5 +20,9 @@ public class MovieController {
 
     public void createMovieController(Movie movie) throws SQLException {
         movieRepository.createMovie(movie);
+    }
+
+    public List<Movie> findAllController(){
+        return movieRepository.findAll();
     }
 }
