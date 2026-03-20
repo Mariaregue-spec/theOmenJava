@@ -55,7 +55,10 @@ public class MovieRepositoryImpl {
                     String sinopsis = response.getString("sinopsis");
 
                     //instanciar-crear objeto
-                    movies.add(new Movie(titulo, anio, rating, poster, sinopsis));
+                    //movies.add(new Movie(titulo, anio, rating, poster, sinopsis));
+                    Movie movie = new Movie(titulo, anio, rating, poster, sinopsis);
+                    movies.add(movie);
+
                 }
 
                 System.out.println("Película creada");
