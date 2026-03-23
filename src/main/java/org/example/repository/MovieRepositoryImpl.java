@@ -1,10 +1,6 @@
 package org.example.repository;
-
-
-
 import org.example.config.DBManager;
 import org.example.model.Movie;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +12,10 @@ public class MovieRepositoryImpl {
     public void createMovie(Movie movie) {
         String querySQLCreate = "INSERT INTO movies_terror(titulo, anio, rating, poster, sinopsis) VALUES(?, ?, ?, ?, ?)";
 
-
         try {
             connection = DBManager.initConnection();//conector a la BBDD
             //Statement statement = connection.createStatement(); //preparar la sentencia - Query
             //statement.executeUpdate(querySQLCreate);//ejecutar la sentencia
-
             PreparedStatement statement = connection.prepareStatement(querySQLCreate);
             statement.setString(1, movie.getTitulo());
             statement.setInt(2, movie.getAnio());
@@ -58,7 +52,6 @@ public class MovieRepositoryImpl {
                     //movies.add(new Movie(titulo, anio, rating, poster, sinopsis));
                     Movie movie = new Movie(titulo, anio, rating, poster, sinopsis);
                     movies.add(movie);
-
                 }
 
                 System.out.println("Película creada");
@@ -68,10 +61,8 @@ public class MovieRepositoryImpl {
             } finally {
                 DBManager.closeConnection();
             }
-
             return movies;
         }
-
     }
 
 
