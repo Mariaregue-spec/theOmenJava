@@ -1,48 +1,26 @@
-# 🎬 THE OMEN JAVA
+# 🎬 The Omen Java — Movie Manager (MVC + JDBC + MySQL)
 
-![Java](https://img.shields.io/badge/Java-17-red)
-![MySQL](https://img.shields.io/badge/MySQL-Database-black)
-![MVC](https://img.shields.io/badge/Architecture-MVC-darkred)
-![JDBC](https://img.shields.io/badge/JDBC-Enabled-darkgreen)
-![Status](https://img.shields.io/badge/status-completed-bloodred)
+![Java](https://img.shields.io/badge/Java-17-blue)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![JDBC](https://img.shields.io/badge/JDBC-API-green)
+![Architecture](https://img.shields.io/badge/Architecture-MVC-black)
+![Status](https://img.shields.io/badge/status-finished-brightgreen)
 
-> Horror movie manager built with Java, JDBC and MySQL  
-> Inspired by dark movie databases and console backends
+## 📌 Overview
 
----
+The Omen Java is a console-based backend application built in Java using MVC architecture.  
+The project manages horror movies stored in a MySQL database using JDBC.
 
-## 🩸 About the project
+This project was developed to practice backend fundamentals including:
 
-**The Omen Java** is a console application that allows you to manage horror movies stored in a MySQL database.
-
-The project was created to practice:
-
-- MVC architecture
+- Layered architecture
 - Repository pattern
-- JDBC connection
+- JDBC database connection
 - SQL queries
+- Object-oriented programming
 - Clean code structure
-- Java backend fundamentals
 
-The application lets you create and list movies from the console.
-
----
-
-## 🎥 Preview
-
-## 📸 Screenshots
-
-### Console
-
-![Console](images/consola.png)
-
-### Database
-
-![Database](images/db.png)
-
-### Project structure
-
-![Structure](images/estructura.png)
+The application allows the user to create and retrieve movies from the database.
 
 ---
 
@@ -70,13 +48,12 @@ view
 Main
 ```
 
-Patterns used:
+### Patterns used
 
-- MVC
-- Repository
-- DAO
-- POJO
-- JDBC connection manager
+- MVC (Model View Controller)
+- Repository / DAO
+- POJO Model
+- JDBC Connection Manager
 
 ---
 
@@ -94,7 +71,7 @@ Table
 movies_terror
 ```
 
-SQL
+SQL schema
 
 ```sql
 CREATE TABLE movies_terror (
@@ -110,27 +87,29 @@ CREATE TABLE movies_terror (
 Connection config
 
 ```java
-jdbc:mysql://localhost:3306/the_omen
+private static final String URL = "jdbc:mysql://localhost:3306/the_omen";
+private static final String USER = "root";
+private static final String PASS = "root";
 ```
 
 ---
 
-## ⚙️ Technologies
+## ⚙️ Tech Stack
 
 - Java 17
 - Maven
 - JDBC
 - MySQL
 - IntelliJ IDEA
+- SQL
 - MVC Pattern
 - Repository Pattern
-- SQL
 
 ---
 
-## ▶️ Run project
+## ▶️ How to run
 
-Clone repo
+Clone repository
 
 ```bash
 git clone https://github.com/Mariaregue-spec/theOmenJava.git
@@ -148,10 +127,10 @@ Create table
 movies_terror
 ```
 
-Edit
+Configure database credentials
 
 ```
-DBManager.java
+config/DBManager.java
 ```
 
 Run
@@ -162,7 +141,7 @@ Main.java
 
 ---
 
-## 💻 Example
+## 💻 Example execution
 
 ```
 Escriba el nombre de la película
@@ -189,21 +168,72 @@ Titulo : The Omen | Anio : 1976 | Rating : 8.0 | Poster : url | Sinopsis : Class
 
 ---
 
-## ☠ Concepts used
+## 📸 Screenshots
 
-- Object Oriented Programming
-- MVC
-- JDBC
+### Console execution
+
+<img width="766" height="405" alt="Captura de pantalla 2026-03-23 090503" src="https://github.com/user-attachments/assets/5133300e-372e-4797-89f3-46a23a8c839d" />
+
+
+### Database (MySQL)
+
+<img width="960" height="503" alt="image" src="https://github.com/user-attachments/assets/befc70f2-9a64-48c1-8e9a-2cb4e1b7bac7" />
+
+
+### Project structure (IntelliJ)
+
+<img width="427" height="373" alt="Captura de pantalla 2026-03-23 084728" src="https://github.com/user-attachments/assets/f23ba363-2621-465a-8d8d-bca1b12f4967" />
+
+
+### Code example
+
+```java
+public void createMovie(Movie movie) {
+
+    String querySQLCreate =
+        "INSERT INTO movies_terror(titulo, anio, rating, poster, sinopsis) VALUES(?, ?, ?, ?, ?)";
+
+    try {
+
+        connection = DBManager.initConnection();
+
+        PreparedStatement statement =
+                connection.prepareStatement(querySQLCreate);
+
+        statement.setString(1, movie.getTitulo());
+        statement.setInt(2, movie.getAnio());
+        statement.setDouble(3, movie.getRating());
+        statement.setString(4, movie.getPoster());
+        statement.setString(5, movie.getSinopsis());
+
+        statement.execute();
+
+        System.out.println("Película creada");
+
+    } catch (Exception exception) {
+        System.out.println(exception.getMessage());
+    }
+}
+```
+
+---
+
+## 📚 Concepts demonstrated
+
+- Object-Oriented Programming
+- MVC architecture
+- JDBC API
 - PreparedStatement
 - ResultSet
+- SQL integration
 - Repository pattern
-- SQL connection
-- Layered architecture
+- Layer separation
+- Connection management
 
 ---
 
 ## 👩‍💻 Author
 
-Maria Regue
+Maria Regue  
 
-Java backend practice project
+Backend Java practice project focused on clean architecture and database integration.
