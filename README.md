@@ -1,30 +1,31 @@
-# 🎬 The Omen Java — Movie Manager (MVC + JDBC + MySQL)
+# 🎬 The Omen Java — Gestor de Películas (MVC + JDBC + MySQL)
 
 ![Java](https://img.shields.io/badge/Java-17-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
 ![JDBC](https://img.shields.io/badge/JDBC-API-green)
-![Architecture](https://img.shields.io/badge/Architecture-MVC-black)
-![Status](https://img.shields.io/badge/status-finished-brightgreen)
+![Arquitectura](https://img.shields.io/badge/Architecture-MVC-black)
+![Estado](https://img.shields.io/badge/status-completed-brightgreen)
 
-## 📌 Overview
+## 📌 Descripción
 
-The Omen Java is a console-based backend application built in Java using MVC architecture.  
-The project manages horror movies stored in a MySQL database using JDBC.
+The Omen Java es una aplicación de consola desarrollada en Java siguiendo arquitectura MVC.  
+El proyecto permite gestionar películas almacenadas en una base de datos MySQL usando JDBC.
 
-This project was developed to practice backend fundamentals including:
+Este proyecto se ha realizado para practicar conceptos fundamentales de backend:
 
-- Layered architecture
-- Repository pattern
-- JDBC database connection
-- SQL queries
-- Object-oriented programming
-- Clean code structure
+- Arquitectura por capas
+- Patrón Repository / DAO
+- Conexión a base de datos con JDBC
+- Consultas SQL
+- Programación orientada a objetos
+- Separación de responsabilidades
+- Buenas prácticas en Java
 
-The application allows the user to create and retrieve movies from the database.
+La aplicación permite crear y consultar películas desde la consola.
 
 ---
 
-## 🧠 Architecture
+## 🧠 Arquitectura
 
 ```
 src/main/java/org/example
@@ -48,30 +49,32 @@ view
 Main
 ```
 
-### Patterns used
+### Patrones utilizados
 
 - MVC (Model View Controller)
 - Repository / DAO
 - POJO Model
-- JDBC Connection Manager
+- Gestor de conexión JDBC
 
 ---
 
-## 🗄️ Database
+## 🗄️ Base de datos
 
-Database name
+La aplicación utiliza MySQL para almacenar las películas.
+
+Nombre de la base de datos
 
 ```
 the_omen
 ```
 
-Table
+Tabla
 
 ```
 movies_terror
 ```
 
-SQL schema
+Script SQL
 
 ```sql
 CREATE TABLE movies_terror (
@@ -84,7 +87,7 @@ CREATE TABLE movies_terror (
 );
 ```
 
-Connection config
+Configuración de conexión
 
 ```java
 private static final String URL = "jdbc:mysql://localhost:3306/the_omen";
@@ -94,7 +97,7 @@ private static final String PASS = "root";
 
 ---
 
-## ⚙️ Tech Stack
+## ⚙️ Tecnologías usadas
 
 - Java 17
 - Maven
@@ -102,38 +105,38 @@ private static final String PASS = "root";
 - MySQL
 - IntelliJ IDEA
 - SQL
-- MVC Pattern
+- Patrón MVC
 - Repository Pattern
 
 ---
 
-## ▶️ How to run
+## ▶️ Cómo ejecutar el proyecto
 
-Clone repository
+Clonar repositorio
 
 ```bash
 git clone https://github.com/Mariaregue-spec/theOmenJava.git
 ```
 
-Create database
+Crear base de datos
 
 ```
 the_omen
 ```
 
-Create table
+Crear tabla
 
 ```
 movies_terror
 ```
 
-Configure database credentials
+Configurar credenciales en
 
 ```
 config/DBManager.java
 ```
 
-Run
+Ejecutar
 
 ```
 Main.java
@@ -141,7 +144,7 @@ Main.java
 
 ---
 
-## 💻 Example execution
+## 💻 Ejemplo de ejecución
 
 ```
 Escriba el nombre de la película
@@ -160,7 +163,7 @@ Rating
 8.0
 ```
 
-Output
+Salida
 
 ```
 Titulo : The Omen | Anio : 1976 | Rating : 8.0 | Poster : url | Sinopsis : Classic horror movie
@@ -168,24 +171,23 @@ Titulo : The Omen | Anio : 1976 | Rating : 8.0 | Poster : url | Sinopsis : Class
 
 ---
 
-## 📸 Screenshots
+## 📸 Capturas
 
-### Console execution
+### Ejecución por consola
 
-<img width="766" height="405" alt="Captura de pantalla 2026-03-23 090503" src="https://github.com/user-attachments/assets/5133300e-372e-4797-89f3-46a23a8c839d" />
+![console](https://github.com/user-attachments/assets/5133300e-372e-4797-89f3-46a23a8c839d)
 
+### Base de datos (MySQL Workbench)
 
-### Database (MySQL)
+![database](https://github.com/user-attachments/assets/befc70f2-9a64-48c1-8e9a-2cb4e1b7bac7)
 
-<img width="960" height="503" alt="image" src="https://github.com/user-attachments/assets/befc70f2-9a64-48c1-8e9a-2cb4e1b7bac7" />
+### Estructura del proyecto (IntelliJ)
 
+![structure](https://github.com/user-attachments/assets/f23ba363-2621-465a-8d8d-bca1b12f4967)
 
-### Project structure (IntelliJ)
+---
 
-<img width="427" height="373" alt="Captura de pantalla 2026-03-23 084728" src="https://github.com/user-attachments/assets/f23ba363-2621-465a-8d8d-bca1b12f4967" />
-
-
-### Code example
+## 💻 Ejemplo de código
 
 ```java
 public void createMovie(Movie movie) {
@@ -218,22 +220,22 @@ public void createMovie(Movie movie) {
 
 ---
 
-## 📚 Concepts demonstrated
+## 📚 Conceptos aplicados
 
-- Object-Oriented Programming
-- MVC architecture
-- JDBC API
+- Programación Orientada a Objetos
+- Arquitectura MVC
+- JDBC
 - PreparedStatement
 - ResultSet
-- SQL integration
-- Repository pattern
-- Layer separation
-- Connection management
+- Integración con MySQL
+- Repository Pattern
+- Separación por capas
+- Gestión de conexión a BBDD
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 Autor
 
 Maria Regue  
 
-Backend Java practice project focused on clean architecture and database integration.
+Proyecto práctico de backend en Java enfocado en arquitectura limpia y conexión a base de datos.
